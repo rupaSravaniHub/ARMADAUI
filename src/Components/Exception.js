@@ -15,7 +15,7 @@ const ExceptionDetails = () => {
     const [showException, setShowException] = useState(false);
     const showExceptions = () => {
        
-        const scenarioDetailsUrl = `http://localhost:8001/getExceptionDetails/${idInputField}/${nameInputField}/${ccInputField}`;
+        const scenarioDetailsUrl = `http://localhost:8080/getExceptionDetails/${idInputField}/${nameInputField}/${ccInputField}`;
       
         axios.get(scenarioDetailsUrl)
             .then(response => {

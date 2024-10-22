@@ -13,25 +13,33 @@ export default function View() {
 
   const navigate=useNavigate("");
 async function viewsceneriodetails() {
-
-    let res= await fetch(`http://172.17.1.25:8080/getscenerio/${id}/${name}/${code}`,{
+    try{
+      
+    let res= await fetch(`http://localhost:8080/getscenerio/${id}/${name}/${code}`,{
     
-        method:'GET',
+      method:'GET',
 
-        headers:{
-            'Content-Type': 'application/json'
-        }
+      headers:{
+          'Content-Type': 'application/json'
+      }
 
-    })
+  })
 if(res.ok){
 
-    const details=await res.json();
+  const details=await res.json();
 
 
-    // console.log(details)
-    navigate("/scenerio/viewscenerio",{state:details})
+
+
+ console.log(details)
+  navigate("/scenario/viewscenerio",{state:details})
 
 }
+    }
+    catch(error){
+      console.log("failed to fetch")
+    }
+
 
 
 }

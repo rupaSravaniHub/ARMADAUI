@@ -23,14 +23,14 @@ const ScenarioCreation =()=>{
     
     const timer = React.useRef(undefined);
 
-    const buttonSx = {
-        ...(success && {
-          bgcolor: green[500],
-          '&:hover': {
-            bgcolor: green[700],
-          },
-        }),
-      };
+    // const buttonSx = {
+    //     ...(success && {
+    //       bgcolor: green[500],
+    //       '&:hover': {
+    //         bgcolor: green[700],
+    //       },
+    //     }),
+    //   };
     
       React.useEffect(() => {
         return () => {
@@ -39,11 +39,11 @@ const ScenarioCreation =()=>{
       }, []);
     
     const [scenarioCreationData, setScenarioCreationData] = useState({
-        scenarioname: "",
-        countrycode: "",
+        scenarioName: "",
+        countryCode: "",
         hops:"",
-        inboundqueue: "",
-        outboundqueue: "", 
+        inboundQueue: "",
+        outboundQueue: "", 
     });
 
 
@@ -57,7 +57,7 @@ const ScenarioCreation =()=>{
 
     const handleCreate = async (e) => {
 
-if(scenarioCreationData.scenarioname!=""&&scenarioCreationData.countrycode!=""){
+if(scenarioCreationData.scenarioName!=""&&scenarioCreationData.countrycode!=""){
  
 seterror(false)
 seterror1(false)
@@ -77,7 +77,7 @@ e.preventDefault();
 console.log(scenarioCreationData);
 
 try{
-    const response = await fetch('http://localhost:8001/scenarioCreation', {
+    const response = await fetch('http://localhost:8080/scenarioCreation', {
         method: "Post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(scenarioCreationData)
@@ -93,11 +93,11 @@ try{
 }
 else{
 
-  if(scenarioCreationData.scenarioname==""){
+  if(scenarioCreationData.scenarioName==""){
     seterror(true)
   
   }
- if(scenarioCreationData.countrycode==""){
+ if(scenarioCreationData.countryCode==""){
     seterror1(true)
   }
 
@@ -137,8 +137,8 @@ else{
                                 className='InputFields'
                                 id="demo-helper-text-misaligned1"
                                 label="Scenerio name"
-                                name="scenarioname" 
-                                value={scenarioCreationData.scenarioname} 
+                                name="scenarioName" 
+                                value={scenarioCreationData.scenarioName} 
                                 onChange={handleInputChange} 
                                 
                             />
@@ -148,8 +148,8 @@ else{
                                 className='InputFields'
                                 id="demo-helper-text-misaligned"
                                 label="Country Code"
-                                name="countrycode" // Add the name attribute
-                                value={scenarioCreationData.countrycode} // Bind value from the state
+                                name="countryCode" // Add the name attribute
+                                value={scenarioCreationData.countryCode} // Bind value from the state
                                 onChange={handleInputChange} // Handle the input change event  
                             />
 
@@ -168,8 +168,8 @@ else{
                                 className='InputFields'
                                 id="demo-helper-text-misaligned"
                                 label="Inbound Queue"
-                                name="inboundqueue" // Add the name attribute
-                                value={scenarioCreationData.inboundqueue} // Bind value from the state
+                                name="inboundQueue" // Add the name attribute
+                                value={scenarioCreationData.inboundQueue} // Bind value from the state
                                 onChange={handleInputChange} // Handle the input change event
                                     
                             />
@@ -178,8 +178,8 @@ else{
                                 className='InputFields'
                                 id="demo-helper-text-misaligned"
                                 label="Outbound Queue"
-                                name="outboundqueue" // Add the name attribute
-                                value={scenarioCreationData.outboundqueue} // Bind value from the state
+                                name="outboundQueue" // Add the name attribute
+                                value={scenarioCreationData.outboundQueue} // Bind value from the state
                                 onChange={handleInputChange} // Handle the input change event
                                     
                             />  
@@ -201,9 +201,9 @@ else{
                         // window.location.reload();
                     }> Create </button>   */}
  <Box sx={{ m: 1, position: 'relative' }}>
-        <Button
+        <Button 
           variant="contained"
-          sx={buttonSx}
+          sx={{color:'white',backgroundColor:'#011F5B'}}
           disabled={loading}
           onClick={handleCreate}
         >

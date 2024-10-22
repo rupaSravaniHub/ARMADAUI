@@ -30,7 +30,7 @@ const [responseData, setData] = useState({});
 
     const handleViewAudits = async () => {
         try {
-            const getScenarioDetailsUrl = `http://localhost:8001/getScenarioById/${scenarioId}/${scenarioname}/${countrycode}`;
+            const getScenarioDetailsUrl = `http://localhost:8080/getScenarioById/${scenarioId}/${scenarioname}/${countrycode}`;
             const response = await axios.get(getScenarioDetailsUrl);
             setData(response.data)
             // setPayload(response.data.payload);

@@ -11,8 +11,6 @@ function ButtonAppBar(){
         <Toolbar>
         <box>
           <Button variant="text" sx={{color:'white',fontSize:'25px'}} onClick={()=>navigate("/")}>ARMADA</Button>
-          {/* <img src='./wallmartlogo.png' style={{height:'50px'}}></img> */}
-            {/* <Button sx={{marginLeft:45, color:'white'}}>Integeration</Button> */}
 
         </box>
            

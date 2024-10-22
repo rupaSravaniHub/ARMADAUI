@@ -19,7 +19,7 @@ export default function Sceneriocard() {
     <Card sx={{ width: 345 , '&:hover': {
       transform: 'scale(1.05)', 
       boxShadow: '0px 7px 8px black',
-      // background:'#F0FFFF'
+   
     }}} onClick={() => navigate('/scenario/view')} >
         <CardMedia sx={{ height: 140 }} image='\scenario4.PNG'>
           {/* <Typography  variant="h4" component="div" color='#011F5B' padding='40px' fontSize={'25px'}bgcolor={'white'}>
